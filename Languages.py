@@ -28,5 +28,7 @@ for lang in langHTML: #build the list of languages. Each index might have its ow
 
 df = pd.DataFrame(countries)
 df2 = pd.DataFrame(langs)
-df3 = pd.concat([df,df2],axis=1)
-df3.to_csv("C:/Users/Nathan/Desktop/lang.csv")
+df3 = pd.concat([df,df2],axis=1, ignore_index = True)
+df4 = df3.melt(id_vars = [0], var_name = 'langLevel' , value_name = 'language')
+df4.dropna(axis = 'rows', subset=('language'), inplace=True)
+df4.to_csv("C:/Users/Nathan/Desktop/lang.csv")
