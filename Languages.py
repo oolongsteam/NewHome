@@ -28,5 +28,5 @@ for lang in langHTML: #build the list of languages. Each index might have its ow
 
 df = pd.DataFrame(countries)
 df2 = pd.DataFrame(langs)
-df3 = pd.concat([df,df2],axis=1)
+df3 = pd.concat([df,df2],1)
 df3.to_csv("C:/Users/Nathan/Desktop/lang.csv")
